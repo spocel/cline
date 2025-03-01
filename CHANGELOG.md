@@ -1,5 +1,53 @@
 # Changelog
 
+## 3.5.0
+
+### Minor Changes
+
+-   d7e9ead: Added X AI as a new provider with support for all current models including Grok-2 and Grok Vision. This integration enables users to connect to X AI's API using their API key and access models with context windows up to 131K tokens. The implementation includes proper handling for vision models and accurate pricing information.
+-   202e3a6: Add rich MCP responses with images and link previews
+-   5d8172a: Add preferred language option to settings
+-   43e9396: GPT 4.5 Preview added
+-   a229b8c: feat(vertex): Add prompt caching support for Claude on Vertex AI
+-   30a4a0e: - **Branch-Per-Task:** Each repo now has a single Shadow Git repo, with separate branches per task (instead of one Shadow Git repo per task).
+
+    -   **Legacy Support:** Existing Checkpoints remain functional, while all new Checkpoints use branch-per-task.
+    -   **Commits:** Legacy tasks commit to legacy Checkpoints; new tasks commit using branch-per-task.
+    -   **Diffing & Deletions:** Both legacy and branch-per-task Checkpoints support diffing and deletion.
+
+    No migration needed—existing tasks stay as-is, and new tasks adopt **branch-per-task** automatically.
+
+-   eedae08: Update anthropic SDK to the latest version
+-   b4149b5: re-added prompt caching to vertex
+-   df7b458: Added thinking tokens budget slider for Sonnet 3.7 with Anthropic
+-   560cefe: only fetching requesty models if api key set
+-   b4e67af: ADD IS_DEV and Hot Reloading to debug
+
+### Patch Changes
+
+-   d6184e9: Add correct cost and tokens info to Native OpenAI and DeepSeek providers
+-   d01b994: Update Claude Sonnet 35. -> 3.7 in README(s)
+-   82f1f79: fix: make AWS Bedrock authentication predictable
+-   9b66eac: Add translation to CODE_OF_CONDUCT, CONTRIBUTING and README to Arabic ar-sa.
+-   45e1f58: A new MCP Marketplace display setting has been added to VSCode settings. (It is defaulted to "true")
+-   d58c947: Added a .clinerules file with details about our most common features
+-   db4f6a7: Make tags section in marketplace scrollable
+-   ea2f408: opt: Enhance OpenAiHandler to diagnose request issues and handle empty streams
+-   4506eb3: .clineignore should be included in .gitignore
+-   916660a: Migrate webview from CRA to Vite
+-   602d250: Change how Cline finds the path to the user's Documents folder by querying xdg-user-dir on Linux systems.
+-   9449f5d: Fix checking "Support Images" setting had no effect on first click
+-   d1a097c: Add dynamic model fetching for the Requesty provider.
+
+    Instead of manually typing the model name, the extension dynamically fetches
+    all the supported model names from Requesty's /v1/models API.
+
+    This allows users to use a fuzzy search logic when choosing the models and
+    also guarantees the information for each model is up to date.
+
+-   5e65ea0: fix: Anthropic's default model is 3.7
+-   0f12400: Adjustment to MCP server installation prompt
+
 ## [3.4.10]
 
 -   Add support for GPT-4.5 preview model
